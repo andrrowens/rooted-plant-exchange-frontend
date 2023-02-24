@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PlantContainer from "./PlantContainer"
 import PlantForm from "./PlantForm"
 import Navbar from "./Navbar"
