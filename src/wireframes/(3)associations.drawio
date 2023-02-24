@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="QWUuCcUbmoYX2DpXJwne" name="Page-1">
+        <mxGraphModel dx="899" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="User" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="290" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Plant" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="290" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Listing" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="470" width="190" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;font color=&quot;#000000&quot;&gt;- has many :listings&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot;&gt;- has many :plants, through: :listings&lt;br&gt;- has_many :friendships, dependent: :destroy&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="450" width="250" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;font color=&quot;#000000&quot;&gt;- belongs to :user&amp;nbsp;&lt;br&gt;- belongs to :plant&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="610" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;font color=&quot;#000000&quot;&gt;- has many :listings&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#000000&quot;&gt;- has many :users, through: :listings&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="420" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Friendship" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="40" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;font color=&quot;#000000&quot;&gt;- belongs_to :user&lt;br&gt;- belongs_to :friend, class_name: &quot;User&quot;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#66B2FF;" parent="1" vertex="1">
+                    <mxGeometry x="205" y="190" width="220" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
