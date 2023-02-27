@@ -6,6 +6,8 @@ import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import PlantForm from "./PlantForm"
 import Navbar from "./Navbar"
+import Signup from './Signup';
+import AuthenticatedUser from './AuthenticatedUser';
 
 function App() {
 
@@ -52,6 +54,16 @@ useEffect(() => { // fetch listings
             <ListingsContainer listings={listings} setListings={setListings} />
             <ListingForm plants={setPlants} setListings={setListings}  />
           </Route >
+
+          <Route path="/signup">
+            <Signup />
+          </Route>
+
+
+          <Route path="/authenticated_user">
+            <AuthenticatedUser /> 
+          </Route>
+
 
       
    </div>
