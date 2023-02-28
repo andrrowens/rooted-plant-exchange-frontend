@@ -28,6 +28,38 @@
   color: #61dafb;
 }
 
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  /* gap: 2rem; */
+  padding: 0rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-link {
+  color: whitesmoke;
+  font-size: 20px;
+  font-style: bold;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.email-form {
+  padding: 4em
+}
+
+.user-auth {
+  margin: 1em;
+  margin-top: 3em;
+  padding: 1em
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,10 +1,12 @@
 import React from 'react';
+import '../App.css';
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PlantContainer from "./PlantContainer"
 import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import PlantForm from "./PlantForm"
+import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
 import Signup from './Signup';
 import AuthenticatedUser from './AuthenticatedUser';
@@ -54,6 +56,10 @@ useEffect(() => { // fetch listings
             <ListingsContainer listings={listings} setListings={setListings} />
             <ListingForm plants={setPlants} setListings={setListings}  />
           </Route >
+
+          <Route path="/email">
+            <EmailForm />
+          </Route>
 
           <Route path="/signup">
             <Signup />
