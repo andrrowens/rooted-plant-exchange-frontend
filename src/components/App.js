@@ -6,6 +6,8 @@ import PlantContainer from "./PlantContainer"
 import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import PlantForm from "./PlantForm"
+import UserContainer from "./UserContainer"
+import UserEditForm from "./UserEditForm"
 import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
 import Signup from './Signup';
@@ -15,6 +17,7 @@ function App() {
 
 const [plants, setPlants] = useState([])
 const [listings, setListings] = useState([])
+const [users, setUsers] = useState([])
 
 useEffect(() => { // fetch plants
   const fetchPlants = async () => {
@@ -42,6 +45,19 @@ useEffect(() => { // fetch listings
   fetchListings()
 }, [])
 
+useEffect(() => { // fetch users
+  const fetchUsers = async () => {
+    try {
+      const resp = await fetch("/users")
+      const data = await resp.json()
+      setUsers(data)
+    } catch (error) {
+      alert(error)
+    }
+  }
+  fetchUsers()
+}, [])
+
   return (
     <div className="App">
       <Navbar />
@@ -55,6 +71,11 @@ useEffect(() => { // fetch listings
           <Route path="/listings">
             <ListingsContainer listings={listings} setListings={setListings} />
             <ListingForm plants={setPlants} setListings={setListings}  />
+          </Route >
+
+          <Route path="/users">
+            <UserContainer users={users} setUsers={setUsers} />
+            <UserEditForm users={users} setUsers={setUsers} />
           </Route >
 
           <Route path="/email">
