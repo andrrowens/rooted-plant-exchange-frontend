@@ -7,20 +7,26 @@ const SignUp = ({updateUser}) => {
         username: '',
         email: '',
         password: '',
+        city: '',
+        state: '',
+        zipcode: ''
     })
 
     const [errors, setErrors] = useState([])
     const history = useHistory()
     const {users, setUsers} = useContext(UserContext)
 
-    const {username, email, password} = formData
+    const {username, email, password, city, state, zipcode} = formData
 
     function onSubmit(e){
         e.preventDefault()
         const user = {
             username,
             email,
-            password
+            password,
+            city,
+            state,
+            zipcode
         }
        
         fetch("/signup", {
@@ -50,19 +56,34 @@ const SignUp = ({updateUser}) => {
         <> 
         <form className="signup-form" onSubmit={onSubmit}>
         <label>
-          Username
+          Username:
           </label>  
           <input className="user-auth" type='text' name='username' value={formData.username} onChange={handleChange} />
         < br />
         <label>
-         Email
+         Email:
          </label>
         <input className="user-auth" type='text' name='email' value={formData.email} onChange={handleChange} />
         < br />
         <label>
-         Password
+         Password:
          </label>
         <input className="user-auth" type='password' name='password' value={formData.password} onChange={handleChange} />
+        < br />
+        <label>
+         City:
+         </label>
+        <input className="user-auth" type='text' name='city' value={formData.city} onChange={handleChange} />
+        < br />
+        <label>
+         State:
+         </label>
+        <input className="user-auth" type='text' name='state' value={formData.state} onChange={handleChange} />
+        < br />
+        <label>
+         Zip Code:
+         </label>
+        <input className="user-auth" type='text' name='zipcode' value={formData.zipcode} onChange={handleChange} />
         < br />
     
         <input className="auth-btn" type='submit' value='Sign Up Today!' />
