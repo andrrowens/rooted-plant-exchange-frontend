@@ -1,4 +1,7 @@
-import React from 'react'
+import React from "react";
+
+
+
 
 const UserCard = ( { id, username, email, password, city, state, zipcode }) => {
 
@@ -21,4 +24,4 @@ const UserCard = ( { id, username, email, password, city, state, zipcode }) => {
 
 }
 
-export default UserCard
+export default UserCard;

@@ -34,6 +34,8 @@ const Navbar= () => {
 
         <NavLink activeStyle={{ color: "green" }} to="/profile" className="nav-link">My Profile</NavLink>
 
+        <NavLink activeStyle={{ color: "green" }} to="/friendships" className="nav-link">Friendships</NavLink>
+
         <NavLink activeStyle={{ color: "green" }} to="/email" className="nav-link">Send Email</NavLink>
 
         <NavLink activeStyle={{ color: "green" }} to="/signup" className="nav-link">Sign Up</NavLink>

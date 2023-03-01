@@ -6,8 +6,9 @@ import PlantContainer from "./PlantContainer"
 import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import PlantForm from "./PlantForm"
-import UserContainer from "./UserContainer"
+import UserCard from "./UserCard"
 import UserEditForm from "./UserEditForm"
+import FriendshipContainer from "./FriendshipContainer"
 import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
 import Signup from './Signup';
@@ -18,6 +19,8 @@ function App() {
 const [plants, setPlants] = useState([])
 const [listings, setListings] = useState([])
 const [users, setUsers] = useState([])
+const [friendships, setFriendships] = useState([])
+// const [currentUser, setCurrentUser] = useState([])
 
 useEffect(() => { // fetch plants
   const fetchPlants = async () => {
@@ -45,7 +48,7 @@ useEffect(() => { // fetch listings
   fetchListings()
 }, [])
 
-useEffect(() => { // fetch users
+useEffect(() => { // fetch all users
   const fetchUsers = async () => {
     try {
       const resp = await fetch("/users")
@@ -57,6 +60,32 @@ useEffect(() => { // fetch users
   }
   fetchUsers()
 }, [])
+
+useEffect(() => { // fetch friendships
+  const fetchFriendships = async () => {
+    try {
+      const resp = await fetch("/friendships")
+      const data = await resp.json()
+      setFriendships(data)
+    } catch (error) {
+      alert(error)
+    }
+  }
+  fetchFriendships()
+}, [])
+
+// useEffect(() => { // fetch current user
+//   const fetchCurrentUser = async () => {
+//     try {
+//       const resp = await fetch("/users")
+//       const data = await resp.json()
+//       setCurrentUser(data)
+//     } catch (error) {
+//       alert(error)
+//     }
+//   }
+//   fetchCurrentUser()
+// }, [])
 
   return (
     <div className="App">
@@ -74,8 +103,13 @@ useEffect(() => { // fetch users
           </Route >
 
           <Route path="/profile">
-            <UserContainer users={users} setUsers={setUsers} />
+            <UserCard users={users} setUsers={setUsers} />
+            {/* <UserCard currentUse={currentUser} setCurrentUser={setCurrentUser} /> */}
             <UserEditForm users={users} setUsers={setUsers} />
+          </Route >
+
+          <Route path="/friendships">
+            <FriendshipContainer friendships={friendships} setFriendships={setFriendships}  />
           </Route >
 
           <Route path="/email">
