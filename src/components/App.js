@@ -73,7 +73,7 @@ useEffect(() => { // fetch users
             <ListingForm plants={setPlants} setListings={setListings}  />
           </Route >
 
-          <Route path="/users">
+          <Route path="/profile">
             <UserContainer users={users} setUsers={setUsers} />
             <UserEditForm users={users} setUsers={setUsers} />
           </Route >

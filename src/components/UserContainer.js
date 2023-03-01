@@ -17,13 +17,8 @@ const UserContainer = ({users, setUsers}) => {
                 {mappedUsers}
             </div>
         </div> 
-    </>
-
-    
-        // <div className="listing-container">
-        //     { mappedListing}
-        // </div>
+    </> 
     )
-}; 
+};
 
 export default UserContainer;
