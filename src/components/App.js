@@ -98,7 +98,7 @@ useEffect(() => { // fetch friendships
           </Route >
 
           <Route path="/listings">
-            <ListingsContainer listings={listings} setListings={setListings} />
+            <ListingsContainer listings={listings} setListings={setListings} friendships={friendships} setFriendships={setFriendships} />
             <ListingForm plants={setPlants} setListings={setListings}  />
           </Route >
 
