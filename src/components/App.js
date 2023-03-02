@@ -2,10 +2,11 @@ import React from 'react';
 import '../App.css';
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PlantContainer from "./PlantContainer"
+import PlantContainerApi from "./PlantContainerApi"
+import PlantContainerUser from "./PlantContainerUser"
+import PlantForm from "./PlantForm"
 import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
-import PlantForm from "./PlantForm"
 import UserCard from "./UserCard"
 import UserEditForm from "./UserEditForm"
 import FriendshipContainer from "./FriendshipContainer"
@@ -110,9 +111,14 @@ useEffect(() => { // fetch API plant data
       <Navbar />
        
 
-          <Route path="/plants">
+          <Route path="/plant_library">
             {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
-            <PlantContainer plants={plants} apiPlants={apiPlants} setApiPlants={setApiPlants} setPlants={setPlants} />
+            <PlantContainerApi apiPlants={apiPlants} setApiPlants={setApiPlants} />
+          </Route >
+
+          <Route path="/user_plants">
+            {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
+            <PlantContainerUser plants={plants} setPlants={setPlants} />
             <PlantForm setPlants={setPlants}  />
           </Route >
 

@@ -59,6 +59,11 @@
   padding: 1em
 }
 
+.plant-image {
+  height: 30%;
+  width: 30%;
+}
+
 
 @keyframes App-logo-spin {
   from {

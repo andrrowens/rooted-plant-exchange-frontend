@@ -28,7 +28,9 @@ const Navbar= () => {
   
         <NavLink exact activeStyle={{ color: "green" }} to="/" className="nav-link">Home</NavLink>
      
-        <NavLink activeStyle={{ color: "green" }} to="/plants" className="nav-link">Plants</NavLink>
+        <NavLink activeStyle={{ color: "green" }} to="/plant_library" className="nav-link">Plant Library</NavLink>
+
+        <NavLink activeStyle={{ color: "green" }} to="/user_plants" className="nav-link">User's Plants</NavLink>
      
         <NavLink activeStyle={{ color: "green" }} to="/listings" className="nav-link">Listings</NavLink>
 

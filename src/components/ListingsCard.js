@@ -73,7 +73,7 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
                      <strong>Poster's Username: </strong>{user_id} <br/>
                      <strong>Learn More About This Plant: </strong>{plant_id} <br/>
                      {/* <strong>Image: </strong>{image} <br/> */}
-                     <img className="campsite-image" src={image} alt={""}/> <br/>
+                     <img className="listing-image" src={image} alt={""}/> <br/>
                             <button className="form-btn" onClick={handleDeleteListing}> 
                                 DELETE 
                             </button>
