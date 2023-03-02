@@ -20,6 +20,7 @@ const [plants, setPlants] = useState([])
 const [listings, setListings] = useState([])
 const [users, setUsers] = useState([])
 const [friendships, setFriendships] = useState([])
+const [apiPlants, setApiPlants] = useState([])
 // const [currentUser, setCurrentUser] = useState([])
 
 useEffect(() => { // fetch plants
@@ -35,6 +36,7 @@ useEffect(() => { // fetch plants
   fetchPlants()
 }, [])
 
+
 useEffect(() => { // fetch listings
   const fetchListings = async () => {
     try {
@@ -47,6 +49,7 @@ useEffect(() => { // fetch listings
   }
   fetchListings()
 }, [])
+
 
 useEffect(() => { // fetch all users
   const fetchUsers = async () => {
@@ -74,6 +77,21 @@ useEffect(() => { // fetch friendships
   fetchFriendships()
 }, [])
 
+
+useEffect(() => { // fetch API plant data
+  const fetchApiPlants = async () => {
+    try {
+      const resp = await fetch("https://perenual.com/api/species-list?page=1&key=sk-tz5C63f677fa6cac6101")
+      const data = await resp.json()
+      setApiPlants(data)
+    } catch (error) {
+      alert(error)
+    }
+  }
+  fetchApiPlants()
+}, [])
+
+
 // useEffect(() => { // fetch current user
 //   const fetchCurrentUser = async () => {
 //     try {
@@ -93,7 +111,8 @@ useEffect(() => { // fetch friendships
        
 
           <Route path="/plants">
-            <PlantContainer plants={plants} setPlants={setPlants} />
+            {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
+            <PlantContainer plants={plants} apiPlants={apiPlants} setApiPlants={setApiPlants} setPlants={setPlants} />
             <PlantForm setPlants={setPlants}  />
           </Route >
 

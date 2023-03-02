@@ -53,7 +53,7 @@ const UserEditForm = ({ id, username, email, password, city, state, zipcode, set
     return(
         <form className="user-form" onSubmit={handleEditUser}>
             <input className="user-input" placeholder="Username" type="text" name="username" value={editUser.username} onChange={handleChange} /> <br/> 
-            {/* <input className="user-input" placeholder="Email" type="text" name="email" value={editUser.email} onChange={handleChange} /> <br/>  */}
+            <input className="user-input" placeholder="Email" type="text" name="email" value={editUser.email} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="City" type="text" name="city" value={editUser.city} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="State" type="text" name="state" value={editUser.state} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="Zip Code" type="text" name="zipcode" value={editUser.zipcode} onChange={handleChange} /> <br/> 

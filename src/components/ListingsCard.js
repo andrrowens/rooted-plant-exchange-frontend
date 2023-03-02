@@ -22,7 +22,8 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
 
     const handleAddFriendship = (e) => {
         e.preventDefault()
-            fetch("/friendships", {
+            // fetch(`/friendships/${id}`, {   // returning 404
+                fetch("/friendships", {    //returning 422
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
