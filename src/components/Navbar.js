@@ -32,7 +32,7 @@ const Navbar= () => {
      
         <NavLink activeStyle={{ color: "green" }} to="/listings" className="nav-link">Listings</NavLink>
 
-        <NavLink activeStyle={{ color: "green" }} to="/profile" className="nav-link">My Profile</NavLink>
+        <NavLink activeStyle={{ color: "green" }} to="/account" className="nav-link">My Account</NavLink>
 
         <NavLink activeStyle={{ color: "green" }} to="/friendships" className="nav-link">Friendships</NavLink>
 

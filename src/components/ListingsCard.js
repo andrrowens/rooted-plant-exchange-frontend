@@ -8,10 +8,7 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
     const [showForm, setShowForm] = useState(false)
 
     const [newFriendship, setNewFriendship] = useState({
-        sender_id: "",
-        receiver_id: "",
-        status: "",
-
+        receiver_id: ""
 })
 
 
@@ -21,14 +18,13 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
 
 
     const handleAddFriendship = (e) => {
-        e.preventDefault()
             // fetch(`/friendships/${id}`, {   // returning 404
                 fetch("/friendships", {    //returning 422
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(newFriendship)
+                body: JSON.stringify({receiver_id: user_id})
             })
             .then(response => {
                 console.log("fetch")

@@ -12,7 +12,7 @@ const ListingsContainer = ({listings, setListings}) => {
     return(
     <>
         <div>
-        <h2 className="campsite-header">Listings</h2>
+        <h2 className="listing-header">Listings</h2>
             <div> 
                 {mappedListings}
             </div>
