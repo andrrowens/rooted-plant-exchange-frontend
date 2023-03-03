@@ -23,7 +23,7 @@ const PlantForm = ({ setPlants  }) => {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-        fetch("/campsites", {
+        fetch("/plants", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
