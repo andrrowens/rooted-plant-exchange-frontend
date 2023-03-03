@@ -79,6 +79,20 @@ useEffect(() => { // fetch friendships
 }, [])
 
 
+// useEffect(() => { // fetch current user
+//   const fetchCurrentUser = async () => {
+//     try {
+//       const resp = await fetch("/authenticated_user")
+//       const data = await resp.json()
+//       setCurrentUser(data)
+//     } catch (error) {
+//       alert(error)
+//     }
+//   }
+//   fetchCurrentUser()
+// }, [])
+
+
 useEffect(() => { // fetch API plant data
   const fetchApiPlants = async () => {
     try {

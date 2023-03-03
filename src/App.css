@@ -68,6 +68,14 @@
   border-top: 3px solid;
 }
 
+.user-card {
+  padding: 4em;
+}
+
+.friendship-header {
+  padding-top: 2em;
+}
+
 
 @keyframes App-logo-spin {
   from {
