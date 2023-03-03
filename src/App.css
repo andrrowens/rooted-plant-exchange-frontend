@@ -64,6 +64,10 @@
   width: 30%;
 }
 
+.listing-card {
+  border-top: 3px solid;
+}
+
 
 @keyframes App-logo-spin {
   from {

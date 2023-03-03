@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import ListingEditForm from "./ListingEditForm";
+import { Link } from "react-router-dom";
 
 const ListingsCard = ({id, title, plant_name, description, city, state, zipcode, image, user_id, plant_id, sender_id, receiver_id, status, setListings, setFriendships}) => {
 
@@ -71,18 +72,24 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
                      <strong>State: </strong>{state} <br/>
                      <strong>Zipcode: </strong>{zipcode} <br/>
                      <strong>Poster's Username: </strong>{user_id} <br/>
-                     <strong>Learn More About This Plant: </strong>{plant_id} <br/>
+                     <button className="form-btn" onClick={handleAddFriendship}>
+                                ADD FRIEND 
+                            </button> <br/>
+
+                    <Link className="plant-link" to="/plant_library">Learn More About This Plant</Link>
+                    {/* <Link className="plant-link" to=`/plant_library/${plant_id}`>Learn More About This Plant</Link> */}
+
                      {/* <strong>Image: </strong>{image} <br/> */}
                      <img className="listing-image" src={image} alt={""}/> <br/>
                             <button className="form-btn" onClick={handleDeleteListing}> 
-                                DELETE 
+                                DELETE LISTING 
                             </button>
                             <button className="form-btn" onClick={handleClick}>
-                                EDIT 
+                                EDIT LISTING
                             </button>
-                            <button className="form-btn" onClick={handleAddFriendship}>
+                            {/* <button className="form-btn" onClick={handleAddFriendship}>
                                 ADD FRIEND 
-                            </button>   
+                            </button>    */}
                     </div>
                 )}
             </div>
