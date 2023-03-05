@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import UserEditForm from "./ListingEditForm";
+import { Link } from "react-router-dom";
 
 
 
@@ -39,9 +40,10 @@ const UserCard = ( { id, username, email, password, city, state, zipcode, setUse
                     </button>
                     <button className="form-btn" onClick={handleDeleteUser}> 
                         DELETE ACCOUNT
-                    </button>
+                    </button> <br/>
+                    <Link className="user-listing-link" to="/listings/mylistings">My Listings</Link> <br/>
                   
-            </div>
+                </div>
         )}
         </div>
 

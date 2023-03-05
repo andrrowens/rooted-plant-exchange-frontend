@@ -64,6 +64,26 @@
   width: 30%;
 }
 
+.listing-card {
+  border-top: 3px solid;
+}
+
+.user-card {
+  padding: 4em;
+}
+
+.friendship-header {
+  padding-top: 2em;
+}
+
+.plant-box {
+  border-top: 3px solid;
+}
+
+.plant-header {
+  padding-top: 2em;
+}
+
 
 @keyframes App-logo-spin {
   from {
