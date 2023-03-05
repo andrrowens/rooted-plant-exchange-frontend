@@ -1,7 +1,11 @@
 import React from 'react'
+import { useState } from "react";
 
 const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships }) => {
 
+    const [editFriendship, setEditFriendship] = useState({
+        status: status,
+    })
 
     const handleDeleteFriendship = () => {
         fetch(`/friendships/${id}`,
@@ -11,9 +15,38 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
         .then(() => setFriendships(currentFriendships => currentFriendships.filter(element => element.id !== id)))
     }
 
-    const handleApproveFriendship = () => {
-        
+    const handleApproveFriendship = (e) => {
+        fetch(`/friendships/${id}`,
+        {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(editFriendship),
+            
+        })
+        .then(response => {
+            if(response.status ===202) {
+                response.json()
+                .then(friendship => {
+
+                    setFriendships(currentStatus => {
+                        const updatedStatus = currentStatus.map(fri =>{
+                            return fri.id === id ? friendship : fri
+                        })
+                        return updatedStatus
+                    })
+                })
+            } else {
+                response.json()
+                .then(error => alert(error.error))
+            }
+        })
+        .catch(error => alert(error))
     }
+
+
 
     return (
         <>
