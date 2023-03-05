@@ -9,6 +9,7 @@ import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import UserCard from "./UserCard"
 import UserEditForm from "./UserEditForm"
+import UserListingContainer from "./UserListingContainer"
 import FriendshipContainer from "./FriendshipContainer"
 import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
@@ -22,6 +23,7 @@ const [listings, setListings] = useState([])
 const [users, setUsers] = useState([])
 const [friendships, setFriendships] = useState([])
 const [apiPlants, setApiPlants] = useState([])
+const [userListings, setUserListings] = useState([])
 // const [currentUser, setCurrentUser] = useState([])
 
 useEffect(() => { // fetch plants
@@ -79,18 +81,18 @@ useEffect(() => { // fetch friendships
 }, [])
 
 
-// useEffect(() => { // fetch current user
-//   const fetchCurrentUser = async () => {
-//     try {
-//       const resp = await fetch("/authenticated_user")
-//       const data = await resp.json()
-//       setCurrentUser(data)
-//     } catch (error) {
-//       alert(error)
-//     }
-//   }
-//   fetchCurrentUser()
-// }, [])
+useEffect(() => { // fetch user listings 
+  const fetchUserListings = async () => {
+    try {
+      const resp = await fetch("/listings")
+      const data = await resp.json()
+      setUserListings(data)
+    } catch (error) {
+      alert(error)
+    }
+  }
+  fetchUserListings()
+}, [])
 
 
 useEffect(() => { // fetch API plant data
@@ -149,6 +151,10 @@ useEffect(() => { // fetch API plant data
 
           <Route path="/friendships">
             <FriendshipContainer friendships={friendships} setFriendships={setFriendships}  />
+          </Route >
+
+          <Route path="/listings/mylistings">
+            <UserListingContainer userListings={userListings} setUserListings={setUserListings} users={users} setUsers={setUsers}   />
           </Route >
 
           <Route path="/email">
