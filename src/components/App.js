@@ -11,7 +11,7 @@ import UserCard from "./UserCard"
 import UserEditForm from "./UserEditForm"
 import FriendshipContainer from "./FriendshipContainer"
 
-// import UserListingContainer from ."/UserListingContainer"
+import UserListingsContainer from "./UserListingsContainer"
 
 import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
@@ -131,6 +131,11 @@ useEffect(() => { // fetch current user
           <Route path="/listings">
             <ListingsContainer listings={listings} setListings={setListings} friendships={friendships} setFriendships={setFriendships} currentUser={currentUser} />
             <ListingForm plants={setPlants} setListings={setListings}  />
+          </Route >
+
+          <Route path="/listings/mylistings">
+            <UserListingsContainer listings={listings} setListings={setListings} currentUser={currentUser} />
+      
           </Route >
 
           <Route path="/account">

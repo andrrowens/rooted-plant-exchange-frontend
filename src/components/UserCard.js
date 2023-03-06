@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import UserEditForm from "./ListingEditForm";
+import UserEditForm from "./UserEditForm";
 import { Link } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, 
 
 
     const handleDeleteUser = () => {
-        fetch(`/account/${id}`,
+        fetch(`/users/${id}`,
         {
             method: "DELETE"
         })

@@ -1,12 +1,12 @@
 import React from "react";
-import UserListingCard from "./UserListingCard"
+import UserListingsCard from "./UserListingsCard"
 
-const UserListingContainer = ({userListings, setUserListings, users}) => {
+const UserListingsContainer = ({listings, setListings, currentUser, user_id}) => {
 
     // const filteredListings = userListings.filter(userListing => userListing.user.id === users.id)
     
-    const mappedListings = userListings.map(userListing => (
-        <UserListingCard {...userListing} key={users.id} setUserListings={setUserListings} />));
+    const mappedListings = listings.map(listing => (
+        <UserListingsCard {...listing} key={user_id} setListings={setListings} />));
 
     return(
     <>
@@ -26,4 +26,4 @@ const UserListingContainer = ({userListings, setUserListings, users}) => {
     )
 }; 
 
-export default UserListingContainer;
+export default UserListingsContainer;

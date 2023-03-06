@@ -9,8 +9,8 @@ const UserListingCard = ({id, title, plant_name, description, city, state, zipco
 
 
     return(
-            <div className="listing-box">
-                    <div className="listing-card">
+            <div className="user-listing-box">
+                    <div className="user-listing-card">
                      <strong>Title: </strong>{title} <br/>
                      <strong>Plant Name: </strong>{plant_name} <br/>
                      <strong>Description: </strong>{description} <br/>

@@ -11,7 +11,7 @@ const Navbar= () => {
 
     // const [showLogout, setShowLogout] = useState(false);
 
-    const{isLoggedIn, setIsLoggedIn} = useState(true)
+    const{isLoggedIn, setIsLoggedIn} = useState(false)
 
   
     const handleLogout = () => {
@@ -52,19 +52,11 @@ const Navbar= () => {
 
         <header className="logout-btn"> <button onClick={handleLogout}>Logout</button> </header>
 
-   
 
         {/* <div>
-            {isLoggedIn ? <button>Logout</button> : null}
+            {isLoggedIn ? <button onClick={handleLogout}>Logout</button> : null}
         </div> */}
 
-        {/* <button className="form-button" onClick={handleLogout} { isLoggedIn? null : }>Logout </button> */}
-
-
-
-        {/* <button className="logout-btn" onClick={handleLogout}>{ !showLogout ? "Logout" : null} </button> */}
-{/* 
-        <button className="form-button" onClick={handleShowForm}>{ !showForm ? "Submit A Review!" : "Hide Review Form"}</button> */}
 
     </nav>
     )
