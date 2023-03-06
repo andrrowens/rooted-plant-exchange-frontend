@@ -13,11 +13,12 @@ const ContactUs = () => {
       }, (error) => {
           console.log(error.text);
       });
+      e.target.reset()
   };
 
   return (
     <form className="email-form" ref={form} onSubmit={sendEmail}>
-      <label>Name</label> 
+      <label>Username</label> 
       <input type="text" name="user_name" /> <br/>
       <label>Email</label>
       <input type="email" name="user_email" /> <br/>

@@ -9,12 +9,15 @@ import ListingsContainer from "./ListingsContainer"
 import ListingForm from "./ListingForm"
 import UserCard from "./UserCard"
 import UserEditForm from "./UserEditForm"
-import UserListingContainer from "./UserListingContainer"
 import FriendshipContainer from "./FriendshipContainer"
+
+// import UserListingContainer from ."/UserListingContainer"
+
 import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
 import Signup from './Signup';
 import AuthenticatedUser from './AuthenticatedUser';
+// import SearchBar from './SearchBar';
 
 function App() {
 
@@ -23,8 +26,7 @@ const [listings, setListings] = useState([])
 const [users, setUsers] = useState([])
 const [friendships, setFriendships] = useState([])
 const [apiPlants, setApiPlants] = useState([])
-const [userListings, setUserListings] = useState([])
-// const [currentUser, setCurrentUser] = useState([])
+const [currentUser, setCurrentUser] = useState([])
 
 useEffect(() => { // fetch plants
   const fetchPlants = async () => {
@@ -81,20 +83,6 @@ useEffect(() => { // fetch friendships
 }, [])
 
 
-useEffect(() => { // fetch user listings 
-  const fetchUserListings = async () => {
-    try {
-      const resp = await fetch("/listings")
-      const data = await resp.json()
-      setUserListings(data)
-    } catch (error) {
-      alert(error)
-    }
-  }
-  fetchUserListings()
-}, [])
-
-
 useEffect(() => { // fetch API plant data
   const fetchApiPlants = async () => {
     try {
@@ -103,24 +91,25 @@ useEffect(() => { // fetch API plant data
       setApiPlants(data.data)
     } catch (error) {
       alert(error)
+      // alert(JSON.stringify(error))
     }
   }
   fetchApiPlants()
 }, [])
 
 
-// useEffect(() => { // fetch current user
-//   const fetchCurrentUser = async () => {
-//     try {
-//       const resp = await fetch("/users")
-//       const data = await resp.json()
-//       setCurrentUser(data)
-//     } catch (error) {
-//       alert(error)
-//     }
-//   }
-//   fetchCurrentUser()
-// }, [])
+useEffect(() => { // fetch current user
+  const fetchCurrentUser = async () => {
+    try {
+      const resp = await fetch("/authenticated_user")
+      const data = await resp.json()
+      setCurrentUser(data)
+    } catch (error) {
+      alert(error)
+    }
+  }
+  fetchCurrentUser()
+}, [])
 
   return (
     <div className="App">
@@ -136,25 +125,23 @@ useEffect(() => { // fetch API plant data
             {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
             <PlantContainerUser plants={plants} setPlants={setPlants} />
             <PlantForm setPlants={setPlants}  />
+            {/* <SearchBar plants={plants}/> */}
           </Route >
 
           <Route path="/listings">
-            <ListingsContainer listings={listings} setListings={setListings} friendships={friendships} setFriendships={setFriendships} />
+            <ListingsContainer listings={listings} setListings={setListings} friendships={friendships} setFriendships={setFriendships} currentUser={currentUser} />
             <ListingForm plants={setPlants} setListings={setListings}  />
           </Route >
 
           <Route path="/account">
-            <UserCard users={users} setUsers={setUsers} />
-            {/* <UserCard currentUse={currentUser} setCurrentUser={setCurrentUser} /> */}
-            <UserEditForm users={users} setUsers={setUsers} />
+            {/* <UserCard users={users} setUsers={setUsers} /> */}
+            <UserCard currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            {/* <UserEditForm users={users} setUsers={setUsers} /> */}
+            <UserEditForm currentUser={currentUser} setCurrentUser={setCurrentUser} />
           </Route >
 
           <Route path="/friendships">
             <FriendshipContainer friendships={friendships} setFriendships={setFriendships}  />
-          </Route >
-
-          <Route path="/listings/mylistings">
-            <UserListingContainer userListings={userListings} setUserListings={setUserListings} users={users} setUsers={setUsers}   />
           </Route >
 
           <Route path="/email">

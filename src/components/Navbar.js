@@ -2,12 +2,18 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
+import { useState } from "react"
 
 
 const Navbar= () => {
 
     const { setUsers } = useContext(UserContext)
 
+    // const [showLogout, setShowLogout] = useState(false);
+
+    const{isLoggedIn, setIsLoggedIn} = useState(true)
+
+  
     const handleLogout = () => {
      fetch("/logout", {
         method: "DELETE",
@@ -45,6 +51,20 @@ const Navbar= () => {
         <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink>
 
         <header className="logout-btn"> <button onClick={handleLogout}>Logout</button> </header>
+
+   
+
+        {/* <div>
+            {isLoggedIn ? <button>Logout</button> : null}
+        </div> */}
+
+        {/* <button className="form-button" onClick={handleLogout} { isLoggedIn? null : }>Logout </button> */}
+
+
+
+        {/* <button className="logout-btn" onClick={handleLogout}>{ !showLogout ? "Logout" : null} </button> */}
+{/* 
+        <button className="form-button" onClick={handleShowForm}>{ !showForm ? "Submit A Review!" : "Hide Review Form"}</button> */}
 
     </nav>
     )

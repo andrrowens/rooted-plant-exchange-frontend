@@ -2,7 +2,6 @@ import React from 'react'
 
 const PlantCardApi = ( { id, common_name, scientific_name, cycle, watering, sunlight, default_image }) => {
 
-
     return (
         <>
             <div className="plant-box">
