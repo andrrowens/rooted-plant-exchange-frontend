@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import HomePage from './HomePage'
 import PlantContainerApi from "./PlantContainerApi"
 import PlantContainerUser from "./PlantContainerUser"
 import PlantForm from "./PlantForm"
@@ -114,7 +115,10 @@ useEffect(() => { // fetch current user
   return (
     <div className="App">
       <Navbar />
-       
+
+          <Route path="/home">
+            <HomePage />
+          </Route >
 
           <Route path="/plant_library">
             {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
@@ -129,11 +133,11 @@ useEffect(() => { // fetch current user
           </Route >
 
           <Route path="/listings">
-            <ListingsContainer listings={listings} setListings={setListings} friendships={friendships} setFriendships={setFriendships} currentUser={currentUser} />
-            <ListingForm plants={setPlants} setListings={setListings}  />
+            <ListingsContainer listings={listings} setListings={setListings} users={users} friendships={friendships} setFriendships={setFriendships} currentUser={currentUser} />
+            <ListingForm plants={setPlants} setListings={setListings} currentUser={currentUser} />
           </Route >
 
-          <Route path="/listings/mylistings">
+          <Route path="/mylistings">
             <UserListingsContainer listings={listings} setListings={setListings} currentUser={currentUser} />
       
           </Route >

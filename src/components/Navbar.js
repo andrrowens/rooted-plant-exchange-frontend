@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
-import { useState } from "react"
 
 
 const Navbar= () => {
@@ -11,7 +10,7 @@ const Navbar= () => {
 
     // const [showLogout, setShowLogout] = useState(false);
 
-    const{isLoggedIn, setIsLoggedIn} = useState(false)
+    // const{isLoggedIn, setIsLoggedIn} = useState(false)
 
   
     const handleLogout = () => {
@@ -32,7 +31,7 @@ const Navbar= () => {
     return (
     <nav className="nav">
   
-        <NavLink exact activeStyle={{ color: "green" }} to="/" className="nav-link">Home</NavLink>
+        <NavLink exact activeStyle={{ color: "green" }} to="/home" className="nav-link">Home</NavLink>
      
         <NavLink activeStyle={{ color: "green" }} to="/plant_library" className="nav-link">Plant Library</NavLink>
 

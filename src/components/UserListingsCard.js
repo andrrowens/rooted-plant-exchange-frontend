@@ -17,7 +17,8 @@ const UserListingCard = ({id, title, plant_name, description, city, state, zipco
                      <strong>City: </strong>{city} <br/>
                      <strong>State: </strong>{state} <br/>
                      <strong>Zipcode: </strong>{zipcode} <br/>
-                     <strong>Poster's Username: </strong>{user_id} <br/>
+                     
+                     <strong>Poster's Username: </strong>{user_id.username} <br/>
                      
                      <Link className="plant-link" to="/plant_library">Learn More About This Plant</Link>
                     </div>  

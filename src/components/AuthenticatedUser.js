@@ -2,7 +2,7 @@ import React, {useState, useContext } from 'react'
 import {useHistory} from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
- const Login = () => {
+ const AuthenticatedUser = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -56,4 +56,4 @@ const handleSubmit = (e) => {
   );
 };
 
-export default Login
+export default AuthenticatedUser
