@@ -57,7 +57,7 @@ const ListingForm = ({ plants, setListings, currentUser }) => {
 
     return (
         <div>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="listing-form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> Create New Listing </h2>
                 <div>
                     <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newListing.title} required />

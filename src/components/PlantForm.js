@@ -58,7 +58,7 @@ const handleSubmit = (e) => {
 
   return (
     <div>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="user-plant-form" onSubmit={handleSubmit}>
           <h2 className="form-title">Submit New Plant</h2>
           <div>
               <input className="user-input" type="text" name="name" placeholder='Plant Name:' onChange={handleChange} value={newPlant.name} required/>

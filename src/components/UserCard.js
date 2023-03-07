@@ -40,7 +40,7 @@ const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, 
                     </button>
                     <button className="form-btn" onClick={handleDeleteUser}> 
                         DELETE ACCOUNT
-                    </button> <br/>
+                    </button> <br/> <br/>
                     <Link className="user-listing-link" to="/listings/mylistings">My Listings</Link> <br/>
                   
                 </div>

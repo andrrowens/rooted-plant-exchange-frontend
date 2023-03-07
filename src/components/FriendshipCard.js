@@ -7,6 +7,16 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
         status: status,
     })
 
+    const isFriendshipApproved = (status) => {
+    if(status === 'accepted') {
+        return true
+    } else {
+        return false
+    }
+    }
+    
+
+    
     const handleDeleteFriendship = () => {
         fetch(`/friendships/${id}`,
         {
@@ -51,12 +61,28 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
     return (
         <>
             <div className="plant-box">
-                <p>{id} </p>
+                {/* <p>{id} </p> */}
                 <p className="friendship-sender"><u>Sender:</u> {sender_id}</p>
                 <p className="friendship-receiver"><u>Receiver:</u> {receiver_id}</p>
                 <p className="friendship-status"><u>Status:</u> {status}</p>
-                <button className="delete-friendship" onClick={handleDeleteFriendship}> REJECT REQUEST &#10006; </button> <br/>
-                <button className="delete-friendship" onClick={handleApproveFriendship}> APPROVE REQUEST &#10006; </button>
+                {/* <button className="delete-friendship" onClick={handleDeleteFriendship}> REJECT REQUEST &#10006; </button> <br/> */}
+
+                {/* <button className="delete-friendship" onClick={handleDeleteFriendship}> REJECT REQUEST &#10006; </button> <br/> */}
+
+
+        
+                <div>
+                    {isFriendshipApproved ? <button onClick={handleDeleteFriendship}>DELETE REQUEST</button> : null}
+                    {isFriendshipApproved ? <button onClick={handleApproveFriendship}>ACCEPT REQUEST</button> : null}
+                </div>
+
+                {/* <div>
+                    {isFriendshipApproved ? <button onClick={handleApproveFriendship}>ACCEPT REQUEST</button> : null}
+                </div> */}
+
+
+
+                {/* <button className="delete-friendship" onClick={handleApproveFriendship}> APPROVE REQUEST &#10006; </button> */}
 
             </div>
         </>

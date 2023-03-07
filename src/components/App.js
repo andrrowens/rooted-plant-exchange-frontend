@@ -87,7 +87,8 @@ useEffect(() => { // fetch friendships
 useEffect(() => { // fetch API plant data
   const fetchApiPlants = async () => {
     try {
-      const resp = await fetch("https://perenual.com/api/species-list?page=1&key=sk-tz5C63f677fa6cac6101") // hide key
+      // const resp = await fetch(`https://perenual.com/api/species-list?page=1&key=${process.env.REACT_APP_PERENUAL_API_KEY}`) 
+      const resp = await fetch("https://perenual.com/api/species-list?page=1&key=sk-tz5C63f677fa6cac6101") //    hide key
       const data = await resp.json()
       setApiPlants(data.data)
     } catch (error) {
@@ -150,7 +151,7 @@ useEffect(() => { // fetch current user
           </Route >
 
           <Route path="/friendships">
-            <FriendshipContainer friendships={friendships} setFriendships={setFriendships}  />
+            <FriendshipContainer friendships={friendships} setFriendships={setFriendships} users={users} />
           </Route >
 
           <Route path="/email">
