@@ -7,7 +7,7 @@ import { UserContext } from '../context/UserContext'
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory()
-    const {setUsers} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
 
 const handleSubmit = (e) => {
@@ -22,11 +22,12 @@ const handleSubmit = (e) => {
     .then(res => {
       if(res.status === 200){
           res.json().then(user => {
-              setUsers(user)
-              history.push(`/users/${user.id}`)
+              setUser(user)
+             
               alert("Successfully logged in")
-          })
-      }else {
+              return user
+          }).then((user) => history.push(`/users/${user.id}`))
+      } else {
           res.json().then(json => setErrors(Object.entries(json.errors)))
       }
   })

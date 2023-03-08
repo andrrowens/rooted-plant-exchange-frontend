@@ -196,6 +196,10 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.user-form {
+  padding-top: 2em;
+}
+
 .signup-form {
   padding: 4em;
   background-image: url("https://i.imgur.com/m27vkVj.jpg");

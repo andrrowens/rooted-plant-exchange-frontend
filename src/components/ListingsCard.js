@@ -58,8 +58,16 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
         {
             method: "DELETE"
         })
-        .then(() => setListings(currentListings => currentListings.filter(element => element.id !== id)))
-    }
+        .then((res) => {
+            if (res.status === 204) {
+                setListings(currentListings => currentListings.filter(element => element.id !== id))
+            } else {
+                res.json().then( error => alert(error))
+            }
+                
+            })
+        }
+
 
 
     return(

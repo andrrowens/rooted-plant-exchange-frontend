@@ -1,7 +1,11 @@
 import React from 'react'
 import { useState } from "react";
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 
 const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships }) => {
+
+    const {setUser} = useContext(UserContext)
 
     const [editFriendship, setEditFriendship] = useState({
         status: status,
@@ -22,8 +26,14 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
         {
             method: "DELETE"
         })
-        .then(() => setFriendships(currentFriendships => currentFriendships.filter(element => element.id !== id)))
+        .then((res) => {
+            if(res.status ===202) {
+                res.json()
+                .then(user => setUser(user))
+            }
+        })
     }
+
 
     const handleApproveFriendship = (e) => {
         fetch(`/friendships/${id}`,
@@ -39,14 +49,9 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
         .then(response => {
             if(response.status ===202) {
                 response.json()
-                .then(friendship => {
+                .then(user => {
 
-                    setFriendships(currentStatus => {
-                        const updatedStatus = currentStatus.map(fri =>{
-                            return fri.id === id ? friendship : fri
-                        })
-                        return updatedStatus
-                    })
+                    setUser(user)
                 })
             } else {
                 response.json()

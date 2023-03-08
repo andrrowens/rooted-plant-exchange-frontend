@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Navbar = () => {
 
-    const { setUsers } = useContext(UserContext)
+    const { setUser } = useContext(UserContext)
 
 
     // const [showLogout, setShowLogout] = useState(true);
@@ -42,7 +42,7 @@ const Navbar = () => {
       })
         .then((r) => {
           if (r.status === 204) {
-            setUsers(null)
+            setUser(null)
             alert("You are logged out")
           } else {
             r.json()

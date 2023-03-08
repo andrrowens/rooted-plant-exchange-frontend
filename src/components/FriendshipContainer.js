@@ -1,11 +1,19 @@
 import React from 'react'
 // import { useState } from 'react'
 import FriendshipCard from './FriendshipCard'
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 
 const FriendshipContainer = ( {friendships, setFriendships }) => {
 
-    const mappedFriendships = friendships.map(friendship => (
+    const {user} = useContext(UserContext)
+
+    const mappedPendingFriendships = user.pending_received_friendship_requests.map(friendship => (
         <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+
+    const mappedApprovedFriendships = user.approved_received_friendship_requests.map(friendship => (
+            <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+
 
     // const pendingFriendships = friendships.filter(friendship => friendship.status === "pending")
 
@@ -29,7 +37,9 @@ const FriendshipContainer = ( {friendships, setFriendships }) => {
 
                 <h2> PENDING</h2>
 
-                {mappedFriendships}
+                {mappedPendingFriendships}
+
+                {mappedApprovedFriendships}
 
                 {/* <div>
                     {acceptedFriendships.map((item, id) => (

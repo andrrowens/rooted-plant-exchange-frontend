@@ -16,7 +16,7 @@ const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, 
 
 
     const handleDeleteUser = () => {
-        fetch(`/users/${id}`,
+        fetch(`/users/${currentUser.id}`,
         {
             method: "DELETE"
         })
