@@ -64,24 +64,151 @@
   width: 30%;
 }
 
+.email-form {
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .listing-card {
   border-top: 3px solid;
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.listing-form {
+  border-top: 3px solid;
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .user-card {
   padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.plant-box {
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .plant-header {
+  background-image: url("https://i.imgur.com/ATWyDUk.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} */
+
+.user-plant-form {
+  border-top: 3px solid;
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .friendship-header {
   padding-top: 2em;
 }
+
+.listing-card {
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-form {
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .plant-box {
   border-top: 3px solid;
 }
 
 .plant-header {
+  padding-top: em;
+}
+
+.listing-image {
+  height: 30%;
+  width: 50%;
+}
+
+/* .user-box {
+  font-size: 24px;
+  align-items: center;
+  border-top: 3px solid;
+  color: black;
+  height: 100%;
+  background-size: cover;
+  font-style: bold;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  background-image: url("https://i.imgur.com/ZFzF3UG.jpg");
+} */
+
+.user-listing-link {
+  color: #2f3641;
+  font-size: 24px;
+  margin-top: 2.5em;
+  font-style: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.user-form {
   padding-top: 2em;
+}
+
+.signup-form {
+  padding: 4em;
+  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 

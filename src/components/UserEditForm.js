@@ -1,9 +1,10 @@
 import React from "react"
 import { useState } from "react";
 
-const UserEditForm = ({ id, username, email, password, city, state, zipcode, setUsers, handleClick}) => {
+const UserEditForm = ({ id, username, email, password, city, state, zipcode, setCurrentUser, handleClick}) => {
 
     const [editUser, setEditUser] = useState({
+        id: id,
         username: username,
         email: email,
         password: password,
@@ -18,7 +19,7 @@ const UserEditForm = ({ id, username, email, password, city, state, zipcode, set
 
     const handleEditUser = (e) => {
         e.preventDefault()
-        fetch(`/user/${id}`,
+        fetch(`/account/${id}`,
         {
             method: "PATCH",
             headers: {
@@ -33,7 +34,7 @@ const UserEditForm = ({ id, username, email, password, city, state, zipcode, set
                 response.json()
                 .then(user => {
 
-                    setUsers(currentUser => {
+                    setCurrentUser(currentUser => {
                         const updatedUser = currentUser.map(userapp =>{
                             return userapp.id === id ? user : userapp
                         })

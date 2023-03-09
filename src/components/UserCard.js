@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import UserEditForm from "./ListingEditForm";
+import UserEditForm from "./UserEditForm";
 import { Link } from "react-router-dom";
 
 
 
-const UserCard = ( { id, username, email, password, city, state, zipcode, setUsers }) => {
+const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, currentUser }) => {
 
     const [userForm, setUserForm] = useState(false)
 
@@ -16,31 +16,31 @@ const UserCard = ( { id, username, email, password, city, state, zipcode, setUse
 
 
     const handleDeleteUser = () => {
-        fetch(`/users/${id}`,
+        fetch(`/users/${currentUser.id}`,
         {
             method: "DELETE"
         })
-        .then(() => setUsers(currentListings => currentListings.filter(element => element.id !== id)))
+        .then(() => setCurrentUser(currentUser => currentUser.filter(element => element.id !== id)))
     }
 
 
     return (
 
         <div className="user-box">
-            {userForm ? <UserEditForm id={id} username={username} email={email} password={password} city={city} state={state} zipcode={zipcode} handleUserClick={handleUserClick} handleDeleteUser={handleDeleteUser}/>:(
+            {userForm ? <UserEditForm id={id} username={username} email={email} city={city} state={state} zipcode={zipcode} handleUserClick={handleUserClick} handleDeleteUser={handleDeleteUser} setCurrentUser={setCurrentUser} currentUser={currentUser}/>:(
                 <div className="user-card">
-                <strong>Username: </strong>{username} <br/>
-                <strong>Email: </strong>{email} <br/>
-                <strong>Password: </strong>{password} <br/>
-                <strong>City: </strong>{city} <br/>
-                <strong>State: </strong>{state} <br/>
-                <strong>Zipcode: </strong>{zipcode} <br/>
+                <strong>Username: </strong>{currentUser.username}<br/>
+                <strong>Email: </strong>{currentUser.email} <br/>
+                {/* <strong>Password: </strong>{currentUser.password} <br/> */}
+                <strong>City: </strong>{currentUser.city} <br/>
+                <strong>State: </strong>{currentUser.state} <br/>
+                <strong>Zipcode: </strong>{currentUser.zipcode} <br/>
                     <button className="form-btn" onClick={handleUserClick}>
                         EDIT ACCOUNT 
                     </button>
                     <button className="form-btn" onClick={handleDeleteUser}> 
                         DELETE ACCOUNT
-                    </button> <br/>
+                    </button> <br/> <br/>
                     <Link className="user-listing-link" to="/listings/mylistings">My Listings</Link> <br/>
                   
                 </div>

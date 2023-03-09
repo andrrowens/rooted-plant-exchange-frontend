@@ -9,7 +9,7 @@ const PlantContainerUser = ( {plants, setPlants }) => {
  
   return (
 
-    <div>
+    <div className="user-plant-box">
         <h2 className="plant-header">User Submitted Plants</h2>
             <div> 
                 {mappedPlants}

@@ -14,12 +14,13 @@ const SignUp = ({updateUser}) => {
 
     const [errors, setErrors] = useState([])
     const history = useHistory()
-    const {users, setUsers} = useContext(UserContext)
+    const {users, setUser} = useContext(UserContext)
 
     const {username, email, password, city, state, zipcode} = formData
 
     function onSubmit(e){
         e.preventDefault()
+        console.log("test")
         const user = {
             username,
             email,
@@ -36,11 +37,10 @@ const SignUp = ({updateUser}) => {
         })
         .then(res => {
             if(res.status === 201){
-                res.json().then(user => {
-                    setUsers(user)
-                    history.push(`/users/${user.id}`)
-                    alert("Successfully signed up")
-                })
+                res.json().then(userObj => {
+                    setUser(userObj)
+                    return userObj
+                }).then((userObj) => history.push(`/users/${userObj.id}`))
             } else {
                 res.json().then(json => setErrors(Object.entries(json.errors)))
             }

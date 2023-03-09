@@ -44,7 +44,7 @@ const ListingEditForm = ({id, title, plant_name, description, city, state, zipco
                 })
             } else {
                 response.json()
-                .then(error => alert(error.error))
+                .then(error => alert(error))
             }
         })
         .catch(error => alert(error))

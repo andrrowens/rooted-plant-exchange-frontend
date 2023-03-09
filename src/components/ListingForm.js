@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const ListingForm = ({ plants, setListings }) => {
+const ListingForm = ({ plants, setListings, currentUser }) => {
 
     const [newListing, setNewListing] = useState({
         title: "",
@@ -57,7 +57,7 @@ const ListingForm = ({ plants, setListings }) => {
 
     return (
         <div>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="listing-form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> Create New Listing </h2>
                 <div>
                     <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newListing.title} required />
@@ -93,7 +93,7 @@ const ListingForm = ({ plants, setListings }) => {
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="user_id" placeholder='User ID:' onChange={handleChange} value={newListing.user_id} required />
+                    <input className="user-input" type="text" name="user_id" placeholder='User ID:' onChange={handleChange} value={currentUser.username} required />
                 </div>
 
                 {/* <div>
