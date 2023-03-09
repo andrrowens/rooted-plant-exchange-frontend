@@ -8,23 +8,23 @@ const FriendshipContainer = ( {friendships, setFriendships }) => {
 
     const {user} = useContext(UserContext)
 
-    const mappedPendingFriendships = user.pending_received_friendship_requests.map(friendship => (
+    // const mappedPendingFriendships = user.pending_received_friendship_requests.map(friendship => (
+    //     <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+
+    // const mappedApprovedFriendships = user.approved_received_friendship_requests.map(friendship => (
+    //         <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+
+    const mappedFriendships = friendships.map(friendship => (
         <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
 
-    const mappedApprovedFriendships = user.approved_received_friendship_requests.map(friendship => (
-            <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+
 
 
     // const pendingFriendships = friendships.filter(friendship => friendship.status === "pending")
 
     // const acceptedFriendships = friendships.filter(friendship => friendship.status === "accepted")
 
-    // const acceptedFriendships = [
-    //     { sender_id: "" },
-    //     { receiver_id: "" },
-    //     { status: "" }
-    // ]
-
+  
 
   return (
 
@@ -37,21 +37,16 @@ const FriendshipContainer = ( {friendships, setFriendships }) => {
 
                 <h2> PENDING</h2>
 
-                {mappedPendingFriendships}
+                {mappedFriendships}
 
-                {mappedApprovedFriendships}
+                {/* {mappedPendingFriendships} */}
 
-                {/* <div>
-                    {acceptedFriendships.map((item, id) => (
-                        <div key={id}>{item.sender_id} {item.receiver_id} {item.status} </div>))}
-                
-                </div> */}
+                {/* {mappedApprovedFriendships} */}
+
 
               
-
-                {/* {pendingFriendships} */}
                 <h2> ACCEPTED</h2>
-                {/* <div key={friendships.id}>{acceptedFriendships} </div> */}
+
             </div>
     </div>   
     )
