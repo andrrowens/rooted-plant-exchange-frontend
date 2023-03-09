@@ -128,8 +128,8 @@ useEffect(() => { // fetch current user
 
           <Route path="/user_plants">
             {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
-            <PlantContainerUser plants={plants} setPlants={setPlants} />
-            <PlantForm setPlants={setPlants}  />
+            <PlantContainerUser plants={plants} setPlants={setPlants} currentUser={currentUser} />
+            <PlantForm setPlants={setPlants} currentUser={currentUser}  />
             {/* <SearchBar plants={plants}/> */}
           </Route >
 

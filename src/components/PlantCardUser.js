@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import PlantEditForm from "./PlantEditForm"
 
-const PlantCardUser = ( { id, name, watering, sunlight, environment, notes, image, setPlants }) => {
+const PlantCardUser = ( { id, name, watering, sunlight, environment, notes, image, user_id, setPlants}) => {
 
     const [showPlantForm, setShowPlantForm] = useState(false)
 
@@ -27,6 +27,7 @@ const PlantCardUser = ( { id, name, watering, sunlight, environment, notes, imag
                 <p className="sunlight"><u>Sunlight Notes:</u> {sunlight}</p>
                 <p className="environment"><u>Environment Notes:</u> {environment}</p>
                 <p className="environment"><u>Other Notes:</u> {notes}</p>
+                <p className="user-id"><u>User ID:</u> {user_id}</p>
                 <img className="plant-image" src={image} alt={""}></img> <br/>
                 <button className="form-btn" onClick={handleDeletePlant}>DELETE PLANT</button> 
                 <button className="form-btn" onClick={handlePlantClick}>EDIT LISTING</button>          
