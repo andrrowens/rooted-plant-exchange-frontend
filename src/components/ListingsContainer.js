@@ -3,16 +3,18 @@ import ListingsCard from "./ListingsCard";
 
 
 
-const ListingsContainer = ({listings, setListings}) => {
+const ListingsContainer = ({listings, setListings, currentUser}) => {
 
     const mappedListings = listings.map(listing => (
         <ListingsCard {...listing} key={listing.id} setListings={setListings} /> ))
     
 
+    
+
     return(
     <>
         <div>
-        <h2 className="campsite-header">Listings</h2>
+        <h2 className="listing-header">Listings</h2>
             <div> 
                 {mappedListings}
             </div>

@@ -2,12 +2,12 @@ import React, {useState, useContext } from 'react'
 import {useHistory} from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
- const Login = () => {
+ const AuthenticatedUser = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory()
-    const {setUsers} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
 
 const handleSubmit = (e) => {
@@ -22,15 +22,17 @@ const handleSubmit = (e) => {
     .then(res => {
       if(res.status === 200){
           res.json().then(user => {
-              setUsers(user)
-              history.push(`/users/${user.id}`)
+              setUser(user)
+             
               alert("Successfully logged in")
-          })
-      }else {
+              return user
+          }).then((user) => history.push(`/users/${user.id}`))
+      } else {
           res.json().then(json => setErrors(Object.entries(json.errors)))
       }
   })
 }
+
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
@@ -55,4 +57,4 @@ const handleSubmit = (e) => {
   );
 };
 
-export default Login
+export default AuthenticatedUser

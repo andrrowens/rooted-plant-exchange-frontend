@@ -44,7 +44,7 @@ const ListingEditForm = ({id, title, plant_name, description, city, state, zipco
                 })
             } else {
                 response.json()
-                .then(error => alert(error.error))
+                .then(error => alert(error))
             }
         })
         .catch(error => alert(error))
@@ -52,7 +52,7 @@ const ListingEditForm = ({id, title, plant_name, description, city, state, zipco
     }
 
     return(
-        <form className="form" onSubmit={handleEditListing}>
+        <form className="listing-edit-form" onSubmit={handleEditListing}>
             <input className="user-input" placeholder="Title" type="text" name="title" value={editListing.title} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="Plant Name" type="text" name="plant_name" value={editListing.plant_name} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="Description" type="text" name="description" value={editListing.description} onChange={handleChange} /> <br/>
