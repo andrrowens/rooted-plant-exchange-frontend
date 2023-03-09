@@ -17,15 +17,19 @@ const ContactUs = () => {
   };
 
   return (
-    <form className="email-form" ref={form} onSubmit={sendEmail}>
-      <label>Username</label> 
-      <input type="text" name="user_name" /> <br/>
-      <label>Email</label>
-      <input type="email" name="user_email" /> <br/>
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form>
+    <div className="email-header">
+      <form className="email-form" ref={form} onSubmit={sendEmail}>
+        <h2 className="email-page">Questions? Comments? Suggestions?</h2>
+        <p className="email-content">Send us an email at <strong>info@rootedplantex.org</strong>. We'd love to hear from you!</p>
+        <label className="email-label">Username</label> 
+        <input className="email-input" type="text" name="user_name" /> <br/>
+        <label className="email-label">Email</label>
+        <input className="email-input" name="user_email" /> <br/>
+        <label className="email-label-message">Message</label>
+        <textarea className="email-input-message" name="message" /> <br/>
+        <input className="email-button" type="submit" value="Send" />
+      </form>
+    </div>
   );
 };
 

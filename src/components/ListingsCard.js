@@ -74,20 +74,20 @@ const ListingsCard = ({id, title, plant_name, description, city, state, zipcode,
             <div className="listing-box">
                 {showForm ? <ListingEditForm id={id} title={title} plant_name={plant_name} description={description} city={city} state={state} zipcode={zipcode} image={image} user_id={user_id} plant_id={plant_id} setListings={setListings} setNewFriendship={setNewFriendship} handleClick={handleClick} handleDeleteListing={handleDeleteListing} handleAddFriendship={handleAddFriendship} />:(
                     <div className="listing-card">
-                     <strong>Title: </strong>{title} <br/>
-                     <strong>Plant Name: </strong>{plant_name} <br/>
-                     <strong>Description: </strong>{description} <br/>
+                     <p className="listing-input"><strong>Listing Title:</strong> {title} </p> 
+                     <p className="listing-input"><strong>Plant Name:</strong>  {plant_name} </p> 
+                     <p className="listing-input"><strong>Description:</strong>  {description} </p> 
                      <img className="listing-image" src={image} alt={plant_name}></img> <br/>
 
-                     <strong>City: </strong>{city} <br/>
-                     <strong>State: </strong>{state} <br/>
-                     <strong>Zipcode: </strong>{zipcode} <br/>
-                     <strong>Poster's Username: </strong>{user_id} <br/>
+                     <p className="listing-input"><strong>City:</strong>  {city} </p> 
+                     <p className="listing-input"><strong>State:</strong>  {state} </p> 
+                     <p className="listing-input"><strong>Zip Code:</strong>  {zipcode} </p> 
+                     <p className="listing-input"><strong>Poster ID:</strong>  {user_id} </p> 
                      <button className="form-btn" onClick={handleAddFriendship}>
                                 ADD FRIEND 
-                            </button> <br/>
+                            </button> <br/> <br/>
 
-                    <Link className="plant-link" to="/plant_library">Learn More About This Plant</Link> <br/>
+                    <Link className="plant-link" to="/plant_library">Learn More About This Plant</Link> <br/> <br/>
                     {/* <Link className="plant-link" to=`/plant_library/${plant_id}`>Learn More About This Plant</Link> */}
 
                             <button className="form-btn" onClick={handleDeleteListing}> 

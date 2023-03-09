@@ -67,9 +67,9 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
         <>
             <div className="plant-box">
                 {/* <p>{id} </p> */}
-                <p className="friendship-sender"><u>Sender:</u> {sender_id}</p>
-                <p className="friendship-receiver"><u>Receiver:</u> {receiver_id}</p>
-                <p className="friendship-status"><u>Status:</u> {status}</p>
+                <p className="friendship-info"><strong>Sender:</strong> {sender_id}</p>
+                <p className="friendship-info"><strong>Receiver:</strong> {receiver_id}</p>
+                <p className="friendship-info"><strong>Status:</strong> {status}</p>
                 {/* <button className="delete-friendship" onClick={handleDeleteFriendship}> REJECT REQUEST &#10006; </button> <br/> */}
 
                 {/* <button className="delete-friendship" onClick={handleDeleteFriendship}> REJECT REQUEST &#10006; </button> <br/> */}
@@ -77,8 +77,8 @@ const FriendshipCard = ( { id, sender_id, receiver_id, status, setFriendships })
 
         
                 <div>
-                    {isFriendshipApproved ? <button onClick={handleDeleteFriendship}>DELETE REQUEST</button> : null}
-                    {isFriendshipApproved ? <button onClick={handleApproveFriendship}>ACCEPT REQUEST</button> : null}
+                    {isFriendshipApproved ? <button className="friends-btn" onClick={handleDeleteFriendship}>DELETE REQUEST</button> : null}
+                    {isFriendshipApproved ? <button className="friends-btn" onClick={handleApproveFriendship}>ACCEPT REQUEST</button> : null}
                 </div>
 
                 {/* <div>

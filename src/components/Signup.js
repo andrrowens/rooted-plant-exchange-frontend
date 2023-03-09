@@ -55,32 +55,32 @@ const SignUp = ({updateUser}) => {
     return (
         <> 
         <form className="signup-form" onSubmit={onSubmit}>
-        <label>
+        <label className="signup-label">
           Username:
           </label>  
           <input className="user-auth" type='text' name='username' value={formData.username} onChange={handleChange} />
         < br />
-        <label>
+        <label className="signup-label">
          Email:
          </label>
         <input className="user-auth" type='text' name='email' value={formData.email} onChange={handleChange} />
         < br />
-        <label>
+        <label className="signup-label">
          Password:
          </label>
         <input className="user-auth" type='password' name='password' value={formData.password} onChange={handleChange} />
         < br />
-        <label>
+        <label className="signup-label">
          City:
          </label>
         <input className="user-auth" type='text' name='city' value={formData.city} onChange={handleChange} />
         < br />
-        <label>
+        <label className="signup-label">
          State:
          </label>
         <input className="user-auth" type='text' name='state' value={formData.state} onChange={handleChange} />
         < br />
-        <label>
+        <label className="signup-label">
          Zip Code:
          </label>
         <input className="user-auth" type='text' name='zipcode' value={formData.zipcode} onChange={handleChange} />

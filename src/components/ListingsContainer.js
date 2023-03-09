@@ -13,7 +13,7 @@ const ListingsContainer = ({listings, setListings, currentUser}) => {
 
     return(
     <>
-        <div>
+        <div className="listing-top">
         <h2 className="listing-header">Listings</h2>
             <div> 
                 {mappedListings}

@@ -12,43 +12,22 @@ const FriendshipContainer = ( {friendships, setFriendships }) => {
         <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
 
     const mappedAcceptedFriendships = user.accepted_received_friendship_requests.map(friendship => (
-            <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+        <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
 
     // const mappedFriendships = friendships.map(friendship => (
     //     <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
 
-
-
-
-    // const pendingFriendships = friendships.filter(friendship => friendship.status === "pending")
-
-    // const acceptedFriendships = friendships.filter(friendship => friendship.status === "accepted")
-
-  
-
   return (
-
-    <div>
-            <div>
-
-
-
-
-                <h2> Pending Friendship Requests</h2>
+    <div className="friendship-top">
+        <h2 className="pending-header"> Pending Friendship Requests</h2>
 
                 {/* {mappedFriendships} */}
 
-                {mappedPendingFriendships}
+            {mappedPendingFriendships}
 
-          
+        <h2 className="friends-header"> Friends </h2>
 
-
-              
-                <h2> Friends </h2>
-
-                {mappedAcceptedFriendships}
-
-            </div>
+            {mappedAcceptedFriendships}
     </div>   
     )
 }
