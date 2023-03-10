@@ -61,7 +61,7 @@
 
 .nav-link {
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 18px;
   font-style: bold;
   font-family: Optima, sans-serif;
 }
@@ -215,6 +215,12 @@
   background-size: cover;
 }
 
+.listing-image {
+  height: 10%;
+  width: 50%;
+  border: 5px solid #555
+}
+
 .listing-input {
   font-family: Optima, sans-serif;
   text-align: center;
@@ -251,6 +257,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.plant-image {
+  border: 5px solid #555;
 }
 
 /* .plant-header {
