@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <NavLink activeStyle={{ color: "#27AE60" }} to="/friendships" className="nav-link">Friendships</NavLink>
 
-        <NavLink activeStyle={{ color: "#27AE60" }} to="/email" className="nav-link">Send Email</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/email" className="nav-link">Contact Us</NavLink>
 
         <NavLink activeStyle={{ color: "#27AE60" }} to="/signup" className="nav-link">Sign Up</NavLink>
 
