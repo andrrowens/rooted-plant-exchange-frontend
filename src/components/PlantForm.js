@@ -35,7 +35,7 @@ const handleSubmit = (e) => {
             if(response.status===201){
                 response.json()
                 .then(newPlantObj => {
-                    setPlants(currentVal => [...currentVal, newPlant])
+                    setPlants(currentVal => [...currentVal, newPlantObj])
                  
                 } )
             } else {

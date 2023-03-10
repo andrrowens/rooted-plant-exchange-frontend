@@ -3,16 +3,17 @@ import React from 'react'
 import FriendshipCard from './FriendshipCard'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
+import FriendCard from './FriendCard'
 
 const FriendshipContainer = ( {friendships, setFriendships }) => {
 
     const {user} = useContext(UserContext)
 
-    const mappedPendingFriendships = user.pending_received_friendship_requests.map(friendship => (
+    const mappedPendingFriendships = user?.pending_received_friendship_requests?.map(friendship => (
         <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
 
-    const mappedAcceptedFriendships = user.accepted_received_friendship_requests.map(friendship => (
-        <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));
+    const mappedAcceptedFriendships = user?.accepted_friends?.map(friend => (
+        <FriendCard friend={friend} key={friend.id} />));
 
     // const mappedFriendships = friendships.map(friendship => (
     //     <FriendshipCard {...friendship} key={friendship.id} setFriendships={setFriendships} />));

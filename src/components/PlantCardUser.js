@@ -36,23 +36,22 @@ const PlantCardUser = ( { id, name, watering, sunlight, environment, notes, imag
                 <p className="user-plant-info"><u>User ID:</u> {user_id}</p>
 
                 <img className="plant-image" src={image} alt={""}></img> <br/>
-                <button className="user-plant-btn" onClick={handleDeletePlant}>DELETE PLANT</button> 
-                <button className="user-plant-btn" onClick={handlePlantClick}>EDIT LISTING</button>  
+                {/* <button className="user-plant-btn" onClick={handleDeletePlant}>DELETE PLANT</button> 
+                <button className="user-plant-btn" onClick={handlePlantClick}>EDIT PlANT</button>   */}
                 
-{/* 
-                { user ? 
-                    <button className="form-btn" onClick={handlePlantClick}>EDIT LISTING</button>
-                    :
-                    null }
+                <div>
+                { user && user.id === user_id ? <> 
+                    <button className="form-btn" onClick={handlePlantClick}>EDIT PLANT</button>
+                    <button className="form-btn" onClick={handleDeletePlant}>DELETE PLANT</button></> : null }
+                </div>
 
-                { user ? 
+           
+                {/* { user ? 
                     <button className="form-btn" onClick={handleDeletePlant}>DELETE PLANT</button>
                     :
-                    null } */}
-
-
-          
-                          
+                    null }
+                </div> */}
+             
             </div>
         </>
     )
