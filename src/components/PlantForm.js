@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const PlantForm = ({setPlants, currentUser}) => {
+const PlantForm = ({setPlants, user}) => {
 
 
   const [message, setMessage] = useState("")
@@ -87,7 +87,7 @@ const handleSubmit = (e) => {
           </div>
 
           <div>
-              <input className="user-input" type="text" name="userid" placeholder='User ID:' onChange={handleChange} value={currentUser.id} required/>
+              <input className="user-input" type="text" name="userid" placeholder='User ID:' onChange={handleChange} value={user.id} required/>
           </div>
 
           

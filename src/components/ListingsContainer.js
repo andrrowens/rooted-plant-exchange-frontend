@@ -3,7 +3,7 @@ import ListingsCard from "./ListingsCard";
 
 
 
-const ListingsContainer = ({listings, setListings, currentUser}) => {
+const ListingsContainer = ({listings, setListings, users}) => {
 
     const mappedListings = listings.map(listing => (
         <ListingsCard {...listing} key={listing.id} setListings={setListings} /> ))

@@ -1,7 +1,7 @@
 import React from 'react'
 import PlantCardUser from './PlantCardUser'
 
-const PlantContainerUser = ( {plants, setPlants, currentUser }) => {
+const PlantContainerUser = ( {plants, setPlants, user }) => {
 
     const mappedPlants = plants.map(plant => (
         <PlantCardUser {...plant} key={plant.id} setPlants={setPlants} />)); 

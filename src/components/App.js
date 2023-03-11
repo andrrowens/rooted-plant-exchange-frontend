@@ -18,16 +18,21 @@ import EmailForm from "./EmailForm"
 import Navbar from "./Navbar"
 import Signup from './Signup';
 import AuthenticatedUser from './AuthenticatedUser';
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 // import SearchBar from './SearchBar';
 
+
 function App() {
+
+const {user, setUser} = useContext(UserContext)
+
 
 const [plants, setPlants] = useState([])
 const [listings, setListings] = useState([])
 const [users, setUsers] = useState([])
 const [friendships, setFriendships] = useState([])
 const [apiPlants, setApiPlants] = useState([])
-const [currentUser, setCurrentUser] = useState([])
 
 useEffect(() => { // fetch plants
   const fetchPlants = async () => {
@@ -100,18 +105,6 @@ useEffect(() => { // fetch API plant data
 }, [])
 
 
-useEffect(() => { // fetch current user
-  const fetchCurrentUser = async () => {
-    try {
-      const resp = await fetch("/authenticated_user")
-      const data = await resp.json()
-      setCurrentUser(data)
-    } catch (error) {
-      alert(error)
-    }
-  }
-  fetchCurrentUser()
-}, [])
 
   return (
     <div className="App">
@@ -128,26 +121,26 @@ useEffect(() => { // fetch current user
 
           <Route path="/user_plants">
             {/* <PlantContainer apiPlants={apiPlants} setApiPlants={setApiPlants} /> */}
-            <PlantContainerUser plants={plants} setPlants={setPlants} currentUser={currentUser} />
-            <PlantForm setPlants={setPlants} currentUser={currentUser}  />
+            <PlantContainerUser plants={plants} setPlants={setPlants} user={user} />
+            <PlantForm setPlants={setPlants} user={user}  />
             {/* <SearchBar plants={plants}/> */}
           </Route >
 
           <Route path="/listings">
-            <ListingsContainer listings={listings} setListings={setListings} users={users} friendships={friendships} setFriendships={setFriendships} currentUser={currentUser} />
-            <ListingForm plants={setPlants} setListings={setListings} currentUser={currentUser} />
+            <ListingsContainer listings={listings} setListings={setListings} users={users} friendships={friendships} setFriendships={setFriendships} user={user} />
+            <ListingForm plants={setPlants} setListings={setListings} user={user} />
           </Route >
 
           <Route path="/mylistings">
-            <UserListingsContainer listings={listings} setListings={setListings} currentUser={currentUser} />
+            <UserListingsContainer listings={listings} setListings={setListings} user={user} />
       
           </Route >
 
           <Route path="/account">
             {/* <UserCard users={users} setUsers={setUsers} /> */}
-            <UserCard currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <UserCard user={user} setUser={setUser} />
             {/* <UserEditForm users={users} setUsers={setUsers} /> */}
-            <UserEditForm currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <UserEditForm user={user} setUser={setUser} />
           </Route >
 
           <Route path="/friendships">
