@@ -1,7 +1,7 @@
 import React from "react";
 import UserListingsCard from "./UserListingsCard"
 
-const UserListingsContainer = ({listings, setListings, currentUser, user_id}) => {
+const UserListingsContainer = ({listings, setListings, user, user_id}) => {
 
     // const filteredListings = userListings.filter(userListing => userListing.user.id === users.id)
     

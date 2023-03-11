@@ -8,7 +8,7 @@ const PlantContainerApi = ( { apiPlants, setApiPlants }) => {
 
   return (
 
-    <div>
+    <div className='plant-top'>
         <h2 className="plant-header">Plant Library</h2>
             <div> 
                 {/* {mappedPlants} */}

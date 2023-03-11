@@ -49,8 +49,8 @@ const PlantEditForm = ({id, name, watering, sunlight, environment, notes, image,
         .catch(error => alert(error))
 
     }
-
     return(
+        
         <form className="plant-edit-form" onSubmit={handleEditPlant}>
             <input className="user-input" placeholder="Name" type="text" name="name" value={editPlant.name} onChange={handleChange} /> <br/> 
             <input className="user-input" placeholder="Watering" type="text" name="watering" value={editPlant.watering} onChange={handleChange} /> <br/> 

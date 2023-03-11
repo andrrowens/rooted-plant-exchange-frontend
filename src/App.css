@@ -28,6 +28,24 @@
   color: #61dafb;
 }
 
+.auth-btn {
+  padding: 0.5em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.api-input {
+  color: black;
+  font-size: 24px;
+  margin-top: 1.5em;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+}
+
+
 .nav {
   background-color: #333;
   color: white;
@@ -43,10 +61,9 @@
 
 .nav-link {
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 18px;
   font-style: bold;
-
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Optima, sans-serif;
 }
 
 .email-form {
@@ -64,20 +81,133 @@
   width: 30%;
 }
 
+.email-header {
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
+}
+
+.email-input {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-size: 1em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 30%;
+  height: 0%;
+  box-sizing: border-box; 
+  align-items: center; 
+}
+
+.email-input-message {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 1em;
+  margin: 8px 0;
+  width: 30%;
+  height: 0%;
+  box-sizing: border-box;  
+}
+
+.email-page {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 2em;
+}
+
+.email-label {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 1em;
+
+}
+
+.email-label-message {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 1em;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.email-content {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-size: 1.5em;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+
+.email-input-message {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 1em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 30%;
+  height: 0%;
+  box-sizing: border-box;  
+}
+
+.email-button {
+  padding: 0.5em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  
+}
+
 .email-form {
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
+}
+
+.homepage {
+  background-image: url("https://i.imgur.com/RLnOuiC.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.home-header {
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.home-sub-header {
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+}
+
+.homepage-link {
+  color: #17202A; 
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 
 .listing-card {
   border-top: 3px solid;
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -85,10 +215,23 @@
   background-size: cover;
 }
 
+.listing-image {
+  height: 10%;
+  width: 50%;
+  border: 5px solid #555
+}
+
+.listing-input {
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  /* font-weight: bold; */
+}
+
 .listing-form {
   border-top: 3px solid;
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -98,7 +241,7 @@
 
 .user-card {
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -108,12 +251,16 @@
 
 .plant-box {
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.plant-image {
+  border: 5px solid #555;
 }
 
 /* .plant-header {
@@ -129,7 +276,7 @@
 .user-plant-form {
   border-top: 3px solid;
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -142,19 +289,74 @@
   padding-top: 2em;
 }
 
+.friendship-top {
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
+.friends-header {
+  color: whitesmoke;
+  font-size: 2em;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+  /* background-image: url("https://i.imgur.com/JPoqIqc.jpg"); */
+  background-size: cover;
+}
+
+.friends-btn {
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.form-title {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-size: 2em;
+}
+
+.form-btn {
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.listing-header {
+  padding-top: 1em;
+  color: whitesmoke;
+  font-size: 30px;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
 .listing-card {
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.lis-submit-btn {
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .login-form {
   padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
@@ -162,18 +364,59 @@
   background-size: cover;
 }
 
+.listing-top {
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
 
 .plant-box {
-  border-top: 3px solid;
+  border-top: 4px solid;
 }
 
 .plant-header {
-  padding-top: em;
+  padding-top: 1em;
+  color: whitesmoke;
+  font-size: 30px;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
+.plant-top {
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
+.plant-link {
+  color: #17202A; 
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.friendship-info {
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+
+}
+
+.pending-header {
+  color: whitesmoke;
+  font-size: 2em;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+  /* background-image: url("https://i.imgur.com/JPoqIqc.jpg"); */
+  background-size: cover;
 }
 
 .listing-image {
   height: 30%;
   width: 50%;
+}
+
+.pending-header {
+  padding-top: 1em;
 }
 
 /* .user-box {
@@ -188,27 +431,88 @@
   background-image: url("https://i.imgur.com/ZFzF3UG.jpg");
 } */
 
+.submit-btn {
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
 .user-listing-link {
   color: #2f3641;
   font-size: 24px;
   margin-top: 2.5em;
   font-style: bold;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Optima, sans-serif;
 }
 
 .user-form {
   padding-top: 2em;
 }
 
+.user-auth {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-size: 1em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 30%;
+  height: 0%;
+  box-sizing: border-box; 
+  align-items: center; 
+}
+
+.user-plant-box {
+  background-image: url("https://i.imgur.com/JPoqIqc.jpg");
+}
+
+.user-plant-info {
+  color: black;
+  font-style: bold;
+  font-family: Optima, sans-serif;
+  font-size: 1.25em;
+}
+
+.user-plant-btn {
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-family: Optima, sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.user-input {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-size: 1em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 30%;
+  height: 0%;
+  box-sizing: border-box; 
+  align-items: center; 
+}
+
 .signup-form {
-  padding: 4em;
-  background-image: url("https://i.imgur.com/m27vkVj.jpg");
+  padding: 2em;
+  background-image: url("https://i.imgur.com/x3d9nWd.jpg");
   width: 100%;
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
+  align-items: center;
 
+}
+
+.signup-label {
+  color: black;
+  font-family: Optima, sans-serif;
+  font-weight: bold; 
+  font-size: 1em;
 }
 
 

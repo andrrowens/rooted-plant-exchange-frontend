@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react";
 
-const UserEditForm = ({ id, username, email, password, city, state, zipcode, setCurrentUser, handleClick}) => {
+const UserEditForm = ({ id, username, email, password, city, state, zipcode, setUser, handleClick}) => {
 
     const [editUser, setEditUser] = useState({
         id: id,
@@ -34,7 +34,7 @@ const UserEditForm = ({ id, username, email, password, city, state, zipcode, set
                 response.json()
                 .then(user => {
 
-                    setCurrentUser(currentUser => {
+                    setUser(currentUser => {
                         const updatedUser = currentUser.map(userapp =>{
                             return userapp.id === id ? user : userapp
                         })

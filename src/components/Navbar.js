@@ -54,23 +54,23 @@ const Navbar = () => {
     return (
     <nav className="nav">
   
-        <NavLink exact activeStyle={{ color: "green" }} to="/home" className="nav-link">Home</NavLink>
+        <NavLink exact activeStyle={{ color: "#27AE60" }} to="/home" className="nav-link">Home</NavLink>
      
-        <NavLink activeStyle={{ color: "orange" }} to="/plant_library" className="nav-link">Plant Library</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/plant_library" className="nav-link">Plant Library</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/user_plants" className="nav-link">User's Plants</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/user_plants" className="nav-link">User's Plants</NavLink>
      
-        <NavLink activeStyle={{ color: "orange" }} to="/listings" className="nav-link">Listings</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/listings" className="nav-link">Listings</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/account" className="nav-link">My Account</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/account" className="nav-link">My Account</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/friendships" className="nav-link">Friendships</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/friendships" className="nav-link">Friendships</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/email" className="nav-link">Send Email</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/email" className="nav-link">Contact Us</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/signup" className="nav-link">Sign Up</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/signup" className="nav-link">Sign Up</NavLink>
 
-        <NavLink activeStyle={{ color: "orange" }} to="/authenticated_user" className="nav-link">Login</NavLink>
+        <NavLink activeStyle={{ color: "#27AE60" }} to="/authenticated_user" className="nav-link">Login</NavLink>
 
         <header className="logout-btn"> <button onClick={handleLogout}>Logout</button> </header>
 

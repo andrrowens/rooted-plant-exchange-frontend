@@ -1,7 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 
-const ListingForm = ({ plants, setListings, currentUser }) => {
+const ListingForm = ({ setListings }) => {
+
+
+const {user, setUser} = useContext(UserContext)
 
     const [newListing, setNewListing] = useState({
         title: "",
@@ -93,7 +98,7 @@ const ListingForm = ({ plants, setListings, currentUser }) => {
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="user_id" placeholder='User ID:' onChange={handleChange} value={currentUser.username} required />
+                    <input className="user-input" type="text" name="user_id" placeholder='User ID:' onChange={handleChange} value={user?.username || ""} required />
                 </div>
 
                 {/* <div>

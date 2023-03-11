@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const PlantForm = ({ setPlants  }) => {
+const PlantForm = ({setPlants, user}) => {
 
 
   const [message, setMessage] = useState("")
@@ -12,7 +12,8 @@ const PlantForm = ({ setPlants  }) => {
     sunlight: "",
     environment: "",
     notes: "",
-    image: ""
+    image: "",
+    user_id: ""
   })
 
   const handleChange = (e) => {
@@ -34,7 +35,7 @@ const handleSubmit = (e) => {
             if(response.status===201){
                 response.json()
                 .then(newPlantObj => {
-                    setPlants(currentVal => [...currentVal, newPlant])
+                    setPlants(currentVal => [...currentVal, newPlantObj])
                  
                 } )
             } else {
@@ -51,7 +52,8 @@ const handleSubmit = (e) => {
           sunlight: "",
           environment: "",
           notes: "",
-          image: ""
+          image: "",
+          user_id: ""
         })
 }
 
@@ -82,6 +84,10 @@ const handleSubmit = (e) => {
 
           <div>
               <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newPlant.image} required/>
+          </div>
+
+          <div>
+              <input className="user-input" type="text" name="userid" placeholder='User ID:' onChange={handleChange} value={user.id} required/>
           </div>
 
           

@@ -3,7 +3,7 @@ import ListingsCard from "./ListingsCard";
 
 
 
-const ListingsContainer = ({listings, setListings, currentUser}) => {
+const ListingsContainer = ({listings, setListings, users}) => {
 
     const mappedListings = listings.map(listing => (
         <ListingsCard {...listing} key={listing.id} setListings={setListings} /> ))
@@ -13,7 +13,7 @@ const ListingsContainer = ({listings, setListings, currentUser}) => {
 
     return(
     <>
-        <div>
+        <div className="listing-top">
         <h2 className="listing-header">Listings</h2>
             <div> 
                 {mappedListings}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 
-const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, currentUser }) => {
+const UserCard = ( { id, username, email, city, state, zipcode, setUser, user }) => {
 
     const [userForm, setUserForm] = useState(false)
 
@@ -16,25 +16,25 @@ const UserCard = ( { id, username, email, city, state, zipcode, setCurrentUser, 
 
 
     const handleDeleteUser = () => {
-        fetch(`/users/${currentUser.id}`,
+        fetch(`/users/${user.id}`,
         {
             method: "DELETE"
         })
-        .then(() => setCurrentUser(currentUser => currentUser.filter(element => element.id !== id)))
+        .then(() => setUser(currentUser => currentUser.filter(element => element.id !== id)))
     }
 
 
     return (
 
         <div className="user-box">
-            {userForm ? <UserEditForm id={id} username={username} email={email} city={city} state={state} zipcode={zipcode} handleUserClick={handleUserClick} handleDeleteUser={handleDeleteUser} setCurrentUser={setCurrentUser} currentUser={currentUser}/>:(
+            {userForm ? <UserEditForm id={id} username={username} email={email} city={city} state={state} zipcode={zipcode} handleUserClick={handleUserClick} handleDeleteUser={handleDeleteUser} setUser={setUser} user={user}/>:(
                 <div className="user-card">
-                <strong>Username: </strong>{currentUser.username}<br/>
-                <strong>Email: </strong>{currentUser.email} <br/>
+                <strong>Username: </strong>{user.username}<br/>
+                <strong>Email: </strong>{user.email} <br/>
                 {/* <strong>Password: </strong>{currentUser.password} <br/> */}
-                <strong>City: </strong>{currentUser.city} <br/>
-                <strong>State: </strong>{currentUser.state} <br/>
-                <strong>Zipcode: </strong>{currentUser.zipcode} <br/>
+                <strong>City: </strong>{user.city} <br/>
+                <strong>State: </strong>{user.state} <br/>
+                <strong>Zipcode: </strong>{user.zipcode} <br/>
                     <button className="form-btn" onClick={handleUserClick}>
                         EDIT ACCOUNT 
                     </button>
