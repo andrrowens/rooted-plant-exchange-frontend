@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
         <div className="home-header"> <br/>
-            <h1 className="home-header">Welcome to Root Plant Exchange</h1>
+            <h1 className="home-header">Welcome to Rooted Plant Exchange</h1>
                 <h2 className="home-sub-header">Connecting Gardeners, Growers and Greenthumbs Since 2023</h2>
         </div>
         <div className="home-body">
